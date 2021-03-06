@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       game=()=>{
+
+        let winner = 0
+
+        let plays=['ROCK', 'PAPER', 'SCISSORS']
+
+        computerPlay=(arr)=>{
+            return arr[Math.floor(Math.random()*arr.length)]
+        }
+
+        playRound=(computer)=>{
+
+            let playerSelection = prompt("Choose ROCK, PAPER, SCISSORS").toUpperCase()
+            console.log(`Computer plays: ${computer} // Player plays: ${playerSelection}.`)
+
+            if (computer === playerSelection) {
+                return 'DRAW ROUND'
+            }
+            else if (computer === 'ROCK'){
+                if (playerSelection === 'PAPER') {
+                    return 'PLAYER WINS ROUND'
+                }
+                else return ''
+            }
+            else if (computer === 'PAPER'){
+                if (playerSelection === 'ROCK') {
+                    return 'COMPUTER WINS ROUND'
+                }
+                else return 'PLAYER WINS ROUND'
+            }
+            else {
+                if (playerSelection === 'ROCK') {
+                    return 'PLAYER WINS ROUND'
+                }
+                else return 'COMPUTER WINS ROUND'
+            }
+
+        }
+
+        for (i=0; i<=4; i++){
+
+            let rounds= playRound(computerPlay(plays))
+        
+            console.log(rounds)
+
+            rounds === 'DRAW ROUND' ? winner : rounds === 'COMPUTER WINS ROUND' ? winner++ : winner--
+
+            /* if (rounds === 'DRAW ROUND'){
+                winner
+                console.log(winner)
+            }
+            else if (rounds === 'COMPUTER WINS ROUND'){
+                winner++
+                console.log(winner)
+            }
+            else if (rounds === 'PLAYER WINS ROUND'){
+                winner--
+                console.log(winner)
+            } */
+
+        }
+
+        winner > 0 ? console.log('COMPUTER WINS GAME') : winner === 0 ? console.log('DRAW GAME') : console.log('PLAYER WINS GAME')
+        }
+
+        game()       
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let i = prompt('Inserisci un numero da controllare')
+        let primo = ''
+
+        ciclo: for (let j = 2; j<i; j++ ){
+           
+            if (i%j===0){
+                primo=false;
+                console.log('itero su', j)
+                break;
+            }
+            else 
+            console.log('itero su', j);
+            primo=true;
+        }
+        primo ? console.log(`${i} è un numero primo`) : console.log(`${i} non è un numero primo`)
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+# use strict da definire all'inizio della pagina,  "use strict";
+# Quando usare il punto e a capo? se ho del codice che inizia nella riga successiva con [], quindi nel caso facessi alert('ciao') [1,2].slice(1), se non metto il ; va in errore
+# I prompt si definiscono con prompt('stringa che viene letta all'esecuzione',[valore di default])
+# I confirm restituiscono un booleano, la sintassi è confirm('stringa')
+# undefined per valore non ancora definito
+# null per valore vuoto
+# String(...) converte il valore in stringa
+# Number(...) converte il valore in numero
+# Boolean('') restituisce false, Boolean('qualsiasi cosa') restituisce true
+# Operazioni: Addizione + Sottrazione - Moltiplicazione * Divisione / Resto % Potenza ** Radice ** 1/x
+# Se ho un let numero = '1', quando chiamo +numero ho la conversione come Number()
+# Il = ha l'ultima precedenza, per cui si eseguono tutte le operazioni a destra, poi viene settato il risultato
+# += somma il risultato a destra alla mia variabile mentre *= la moltiplica: numero += 1 (2) poi numero *= 2 (4)
+# && num controlla se l'input è un numero
+# Increment ++numero++; Decrement --numero--; SOLO PER VARIABILI; possono essere scritti sia davanti o dietro, dipende se lo dobbiamo usare subito (++num) o usare il valore vecchio (num++), è molto importante ad esempio nei cicli for/while
+# while(condizione){... condizione++} tipo di loop che viene effettuato finchè si mantiene la condizione, se ho solo un una condizione posso omettere le {} nella seconda parte
+# Quando i diventa 0, la condizione diventa false
+#  in alternativa posso osare do {condizione} while (); invertendo la formula, se voglio che venga fatto ALMENO UNA VOLTA INDIPENDENTEMENTE DALLA CONDIZIONE WHILE 
+# per uscire dal ciclo possiamo usareo break if (condizione) break;
+# per controllare l'iterazione corrente ed eventualmente passare alla successiva, usiamo continue if (cond) continue: se la condizione è verificata il codice passa nuova iterazione 
+# label: identificatore da mettere prima di un ciclo si scrive label: for (...){}; è comoda perche se facciamo if (condizione) break label; possiamo uscire dal ciclo!
+# sintassi particolare di jasmin per testare il codice. Ho un codice javascript normale e un file spec che contiene i miei test, per azionarlo devo fare nel terminale jasmine file.spec.js
+# require mi importa il codice da testare, quindi devo dargli un riferimento esterno (sintassi node.js)
+# describe('stringa descrittiva', funzione(){}) contiene it(){ e a sua volta expect()} scorre il codice e fa vedere se l'output è corretto
+# it() descrive quello che dovrebbe accadere in inglese semplce e include al suo interno expect con il risultato.
+# module.exports fa coppia con require per esportare la funzione
+# per lavorare sui caratteri di una stringa dobbiamo usare il metodo .split(' '), con uno spazio vuoto nel caso ci sia una frase, senza niente nel caso sia una parola singola ('')
+# reverse() inverte l'ordine degli elementi dell'array e join li unisce ('') attaccandoli in una strigna
+# arguments è un oggetto arraylike che all'interno di una funzione permette di accedere ai parametri che passo ad una funzione arguments[0] però conviene usare parametri rest in ES6
+# posso usare un solo parametro ...restParametro, che deve essere messo alla fine
+# lavoriamo sulle array nei parametri rest ...rest ha una sua length, inoltre sappiamo anche che array.indexOf(parametroRest[i] mi fa vedere l'index dell'elemento
+# con index -1 vuol dire che non ho l'elemento presente
+# posso tirarlo via con una condizione if posta davanti (index >=0) per poi usare ad esempio uno splice
+# un altra maniera per lavorare sulle array è con forEach(qualcosa=>{.push(qualcosa})
+# una terza maniera è usare array.filter(callback) e array.includes che verifica se un elemento è presente nell'array ma accetta solo una condizione (no array)
+# let array = [1,2,3,4,5] let filtro = [3,4]
+# let risultato = array.filter(e => filtro.includes(e)) controlla per ogni e di array se filter include e, poi il risultato finale sarà una array che contiene i check positivi
+# ponendo un ! davanti controllo quelli che NON ci sono
+# Math.min e .max sono comodi per controllare un valore minimo e massimo
+# typeof(numero) === 'number' è un buon controllo dati in ingresso
+# per arrotondare dei numeri ad una certa unità decimale, ignorando nel caso abbiamo un numero senza virgola devo fare Math.round(num*10)/10 e in questo caso metterà eventualmente un solo numero dopo la virgola

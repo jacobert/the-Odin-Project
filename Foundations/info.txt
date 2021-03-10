@@ -39,3 +39,20 @@
 # Math.min e .max sono comodi per controllare un valore minimo e massimo
 # typeof(numero) === 'number' è un buon controllo dati in ingresso
 # per arrotondare dei numeri ad una certa unità decimale, ignorando nel caso abbiamo un numero senza virgola devo fare Math.round(num*10)/10 e in questo caso metterà eventualmente un solo numero dopo la virgola
+# dom targeting: document.querySelector('#id') targetta l'elemento con l'id corrispondente, oppure con querySelector('.class') l'elemento con con classe corrispondente (il primo)
+# elemento.firstElementChild, targeta il primo figlio 
+# .previousElementSibling restituisce il sibling immediatamente precedente nella lista dei figli del parent
+# .querySelectorAll(selettore) ritorna una nodelist (che non è un'array quindi ci sono meno metodi)
+# posso trasformarla in un array ponendo ad esempio let qualcosa = [...parent.querySelectoRall('li')] e mi restituisce un'array con gli elementi child
+#  una seconda maniera è usare Array.from(parent.querySelectoRall('li'))
+# per creare un elemento si usa .createElement('div'), non lo aggiungo
+# aggiungere a DOM: parent.appendChild o .append() (lo mette alla fine) rispetto al parent. .prepend() lo mette primo.
+# .insertBefore(nodo, nodo riferimento) inserisce il nodo nel parent prima del nodo di riferimento
+# elementoTarget.insertAdiacentElement(posizione, elemento da aggiungere) piazziamo l'elemento in questa maniera: beforbegin, prima dell'elementoTarget, afterBegin dentro elementoTarget prima del primo child, beforeend dentro elementoTarget come ultimo, afterend dopo elementoTarget
+# per rimuovere elementoTarget.removeChild(elemento) oppure .remove()
+# per modificare gli stile degli elementi creati lato js possiamo usare la sintassi elemento.style.color = 'red'; oppure elemento.style.cssText = 'color: red'; oppure div.setAttribute('style', 'color:red');
+# se devo accedere a regole con più parole dopo style devo usare camelCase .backgroundColor oppure negli altri metodi inserirli in una stringa .style['background-Color']
+# posso modificare gli attribulti con .setAttribute('id', 'nuovaId'), posso chiamare il valore con getAttribute('id') e posso rimuoverlo con .removeAttribute('id')
+# per le classi posso aggiungerle con .classList.add('new') e l'aggiunge o remove e la toglie, oppure usare il .toggle('classe') per aggiungerla se non l'ha oppure toglierla se l'ha
+# in alternativa possiamo settarla direttamente con .className === ''
+# per aggiungere all'interno del nodo posso usare innerHTML ma potrebbe dare un problema di sicurezza, textContent che definisce TUTTO il contenuto, innerText solo quello visibile all'interno del nodo, innerText è solo per elementi html mentre textContent per tutti gli oggetti del nodo

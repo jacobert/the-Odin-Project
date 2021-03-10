@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        THE TITLE OF YOUR WEBPAGE
+    </h1>
+    <div id="container"></div>
+
+    <script>
+        const container = document.querySelector('#container');
+
+        const content = document.createElement('div');
+        content.classList.add('content');     
+        content.textContent = 'This is the glorious text-content!';
+
+        container.appendChild(content);
+
+        const paragraph = document.createElement('p')
+        paragraph.style.color = 'red'
+        paragraph.textContent = "Hey I'm red!"
+
+        container.append(paragraph)
+
+        const headerThree = document.createElement('h3')
+        headerThree.style.cssText = ('color: blue')
+        headerThree.textContent = "I'm a blue h3!"
+
+        container.append(headerThree)
+
+        const insideContainer = document.createElement('div')
+        insideContainer.setAttribute('style','border: solid 1px black; background-color: pink')
+        container.append(insideContainer)
+
+        const headerOne = document.createElement('div')
+        headerOne.textContent="I'm in a div"
+
+        const paragraphInside = document.createElement('p')
+        paragraphInside.textContent = 'ME TOO!'
+
+        insideContainer.insertAdjacentElement('afterbegin', headerOne)
+        insideContainer.insertAdjacentElement('beforeend', paragraphInside)
+        
+    </script>
+     
+</body>
+</html>
